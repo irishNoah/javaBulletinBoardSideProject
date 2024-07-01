@@ -42,7 +42,7 @@
         </c:forEach>
     </table>
     <br>
-    <form action="WEB-JSP/postadd.jsp" method="get">
+    <form action="/postadd" method="get">
         <button type="submit">Register</button>
     </form>
 </body>

@@ -20,48 +20,51 @@ import com.example.util.DBUtil;
 public class PostServlet extends HttpServlet {
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Post> posts = new ArrayList<>();
-        try (Connection conn = DBUtil.getConnection();	
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts");
-             ResultSet rs = stmt.executeQuery()) {
-            while (rs.next()) {
-                Post post = new Post();
-                post.setNo(rs.getInt("no"));
-                post.setTitle(rs.getString("title"));
-                post.setId(rs.getString("id"));
-                post.setDate(rs.getString("date"));
-                posts.add(post);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 
-        System.out.println("===== PostServlet.java의 doGet 을 실행합니다. =====");
-        request.setAttribute("posts", posts);
-        request.getRequestDispatcher("/WEB-JSP/postlist.jsp").forward(request, response);
-        // request.getRequestDispatcher("/index.jsp").forward(request, response);
+		List<Post> posts = new ArrayList<>();
+		try (Connection conn = DBUtil.getConnection();
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts");
+			ResultSet rs = stmt.executeQuery()) {
+			while (rs.next()) {
+				Post post = new Post();
+				post.setNo(rs.getInt("no"));
+				post.setTitle(rs.getString("title"));
+				post.setId(rs.getString("id"));
+				post.setDate(rs.getString("date"));
+				posts.add(post);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("===== PostServlet.java의 doGet 을 실행합니다. =====");
+		request.setAttribute("posts", posts);
+		request.getRequestDispatcher("/WEB-JSP/postlist.jsp").forward(request, response);
+		// request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
     
     // ===========================================================
     
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String title = request.getParameter("title");
-        String id = request.getParameter("id");
-        String date = request.getParameter("date");
-
-        try (Connection conn = DBUtil.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("INSERT INTO posts (title, id, date) VALUES (?, ?, ?)")) {
-            stmt.setString(1, title);
-            stmt.setString(2, id);
-            stmt.setString(3, date);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        // response.sendRedirect("PostServlet");
-        System.out.println("===== PostServlet.java의 doPost 을 실행합니다. =====");
-        response.sendRedirect("/");
-    }
+//    @Override
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        String title = request.getParameter("title");
+//        String id = request.getParameter("id");
+//        String date = request.getParameter("date");
+//
+//        try (Connection conn = DBUtil.getConnection();
+//             PreparedStatement stmt = conn.prepareStatement("INSERT INTO posts (title, id, date) VALUES (?, ?, ?)")) {
+//            stmt.setString(1, title);
+//            stmt.setString(2, id);
+//            stmt.setString(3, date);
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        // response.sendRedirect("PostServlet");
+//        System.out.println("===== PostServlet.java의 doPost 을 실행합니다. =====");
+//        response.sendRedirect("/");
+//    }
 }

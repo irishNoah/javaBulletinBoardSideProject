@@ -13,6 +13,16 @@
         <url-pattern>/posts</url-pattern>
     </servlet-mapping>
 
+	<servlet>
+        <servlet-name>PostAddServlet</servlet-name>
+        <servlet-class>com.example.servlet.PostAddServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PostAddServlet</servlet-name>
+        <url-pattern>/postadd</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
