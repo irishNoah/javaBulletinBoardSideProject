@@ -21,7 +21,7 @@ public class PostServlet extends HttpServlet {
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Post> posts = new ArrayList<>();
-        try (Connection conn = DBUtil.getConnection();
+        try (Connection conn = DBUtil.getConnection();	
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts");
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
@@ -36,6 +36,7 @@ public class PostServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        System.out.println("===== PostServlet.java의 doGet 을 실행합니다. =====");
         request.setAttribute("posts", posts);
         request.getRequestDispatcher("/WEB-JSP/postlist.jsp").forward(request, response);
         // request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -43,6 +44,7 @@ public class PostServlet extends HttpServlet {
     
     // ===========================================================
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");
         String id = request.getParameter("id");
@@ -59,6 +61,7 @@ public class PostServlet extends HttpServlet {
         }
 
         // response.sendRedirect("PostServlet");
-        response.sendRedirect("posts");
+        System.out.println("===== PostServlet.java의 doPost 을 실행합니다. =====");
+        response.sendRedirect("/");
     }
 }

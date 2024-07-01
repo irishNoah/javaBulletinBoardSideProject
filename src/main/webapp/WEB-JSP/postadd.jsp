@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Add New Post</h2>
-    <form action="../PostServlet" method="post">
+    <form action="/" method="post">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required><br><br>
         <label for="id">ID:</label>
