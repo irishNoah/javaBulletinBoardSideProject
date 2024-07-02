@@ -16,11 +16,14 @@ import com.example.util.DBUtil;
 public class PostAddServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("===== PostAddServlet.java의 doGet 을 실행합니다. =====");
         request.getRequestDispatcher("/WEB-JSP/postadd.jsp").forward(request, response);
     }
 	
 	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("===== PostAddServlet.java의 doPost 을 실행합니다. =====");
+		
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
@@ -38,7 +41,7 @@ public class PostAddServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("/posts");
+        response.sendRedirect("/");
         // response.sendRedirect("/posts");
     }
 }

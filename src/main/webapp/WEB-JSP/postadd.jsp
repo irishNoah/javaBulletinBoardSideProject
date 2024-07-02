@@ -7,7 +7,9 @@
     <title>Add New Post</title>
 </head>
 <body>
-    <h2>Add New Post</h2>
+	<div>	
+    	<h2>Add New Post</h2>
+	</div>
     <form action="/postadd" method="post">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required><br><br>
@@ -15,7 +17,10 @@
         <input type="text" id="id" name="id" required><br><br>
         <label for="date">Date:</label>
         <input type="text" id="date" name="date" placeholder="YYYYMMDD" required><br><br>
-        <button type="submit">Submit</button>
+        <div class="button-container">
+            <button type="submit">Submit</button>
+            <button type="button" onclick="window.location.href='/'">Cancel</button>
+        </div>
     </form>
 </body>
 </html>

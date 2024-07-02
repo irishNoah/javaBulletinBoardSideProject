@@ -44,27 +44,4 @@ public class PostServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-JSP/postlist.jsp").forward(request, response);
 		// request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
-    
-    // ===========================================================
-    
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String title = request.getParameter("title");
-//        String id = request.getParameter("id");
-//        String date = request.getParameter("date");
-//
-//        try (Connection conn = DBUtil.getConnection();
-//             PreparedStatement stmt = conn.prepareStatement("INSERT INTO posts (title, id, date) VALUES (?, ?, ?)")) {
-//            stmt.setString(1, title);
-//            stmt.setString(2, id);
-//            stmt.setString(3, date);
-//            stmt.executeUpdate();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        // response.sendRedirect("PostServlet");
-//        System.out.println("===== PostServlet.java의 doPost 을 실행합니다. =====");
-//        response.sendRedirect("/");
-//    }
 }
