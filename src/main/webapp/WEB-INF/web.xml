@@ -23,6 +23,17 @@
         <url-pattern>/postadd</url-pattern>
     </servlet-mapping>
 
+	<servlet>
+        <servlet-name>PostDetailServlet</servlet-name>
+        <servlet-class>com.example.servlet.PostDetailServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PostDetailServlet</servlet-name>
+        <url-pattern>/postdetail</url-pattern>
+    </servlet-mapping>
+
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
