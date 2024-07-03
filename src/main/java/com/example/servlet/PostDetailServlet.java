@@ -16,6 +16,8 @@ import com.example.util.DBUtil;
 
 //@WebServlet("/postdetail")
 public class PostDetailServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("===== PostDetailServlet.java의 doGet 을 실행합니다. =====");
@@ -24,23 +26,23 @@ public class PostDetailServlet extends HttpServlet {
         Post post = null;
         
         try (Connection conn = DBUtil.getConnection();
-                PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts WHERE no = ?")) {
-               stmt.setInt(1, Integer.parseInt(no));
-               try (ResultSet rs = stmt.executeQuery()) {
-                   if (rs.next()) {
-                       post = new Post();
-                       post.setNo(rs.getInt("no"));
-                       post.setTitle(rs.getString("title"));
-                       post.setId(rs.getString("id"));
-                       post.setDate(rs.getString("date"));
-                   }
-               }
-           } catch (SQLException e) {
-               e.printStackTrace();
-           }
-
-           request.setAttribute("post", post);
-           request.getRequestDispatcher("/WEB-JSP/postdetail.jsp").forward(request, response);
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts WHERE no = ?")) {
+				stmt.setInt(1, Integer.parseInt(no));
+				try (ResultSet rs = stmt.executeQuery()) {
+					if (rs.next()) {
+						post = new Post();
+						post.setNo(rs.getInt("no"));
+						post.setTitle(rs.getString("title"));
+						post.setId(rs.getString("id"));
+						post.setDate(rs.getString("date"));
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	
+			request.setAttribute("post", post);
+			request.getRequestDispatcher("/WEB-JSP/postdetail.jsp").forward(request, response);
     }
 	
 	@Override

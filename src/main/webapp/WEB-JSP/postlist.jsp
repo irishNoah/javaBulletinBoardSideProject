@@ -35,7 +35,7 @@
         <c:forEach var="post" items="${posts}">
             <tr>
                 <td>${post.no}</td>
-                <td>${post.title}</td>
+                <td><a href="/postdetail?no=${post.no}">${post.title}</a></td>
                 <td>${post.id}</td>
                 <td>${post.date}</td>
             </tr>
