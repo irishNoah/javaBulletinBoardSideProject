@@ -21,6 +21,23 @@
         th {
             background-color: #f2f2f2;
         }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .pagination a.active {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -45,5 +62,11 @@
     <form action="/postadd" method="get">
         <button type="submit">등록</button>
     </form>
+
+    <div class="pagination">
+        <c:forEach begin="1" end="${totalPages}" var="i">
+            <a href="/posts?page=${i}" class="${i == currentPage ? 'active' : ''}">${i}</a>
+        </c:forEach>
+    </div>
 </body>
 </html>
