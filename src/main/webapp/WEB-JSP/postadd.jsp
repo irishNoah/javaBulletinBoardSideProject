@@ -18,8 +18,8 @@
         <label for="date">Date:</label>
         <input type="text" id="date" name="date" placeholder="YYYYMMDD" required><br><br>
         <div class="button-container">
-            <button type="submit">Submit</button>
-            <button type="button" onclick="window.location.href='/'">Cancel</button>
+            <button type="submit">게시</button>
+            <button type="button" onclick="window.location.href='/'">이전</button>
         </div>
     </form>
 </body>

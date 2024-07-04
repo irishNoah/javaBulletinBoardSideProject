@@ -17,37 +17,68 @@ import com.example.util.DBUtil;
 //@WebServlet("/postdetail")
 public class PostDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("===== PostDetailServlet.java의 doGet 을 실행합니다. =====");
-        
-		String no = request.getParameter("no");
-        Post post = null;
-        
-        try (Connection conn = DBUtil.getConnection();
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts WHERE no = ?")) {
-				stmt.setInt(1, Integer.parseInt(no));
-				try (ResultSet rs = stmt.executeQuery()) {
-					if (rs.next()) {
-						post = new Post();
-						post.setNo(rs.getInt("no"));
-						post.setTitle(rs.getString("title"));
-						post.setId(rs.getString("id"));
-						post.setDate(rs.getString("date"));
-					}
+
+		request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+		
+		String no 		= request.getParameter("no");
+//		String title 	= request.getParameter("title");
+//        String id 		= request.getParameter("id");
+//        String date 	= request.getParameter("date");
+		Post post 		= null;
+
+		try (Connection conn = DBUtil.getConnection();
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM posts WHERE no = ?")) {
+			stmt.setInt(1, Integer.parseInt(no));
+			
+			try (ResultSet rs = stmt.executeQuery()) {
+				if (rs.next()) {
+					post = new Post();
+					post.setNo(rs.getInt("no"));
+					post.setTitle(rs.getString("title"));
+					post.setId(rs.getString("id"));
+					post.setDate(rs.getString("date"));
+					
+					System.out.println("rs.getInt(\"no\") = " + rs.getInt("no"));
 				}
-			} catch (SQLException e) {
-				e.printStackTrace();
 			}
-	
-			request.setAttribute("post", post);
-			request.getRequestDispatcher("/WEB-JSP/postdetail.jsp").forward(request, response);
-    }
-	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		request.setAttribute("post", post);
+		request.getRequestDispatcher("/WEB-JSP/postdetail.jsp").forward(request, response);
+	}
+
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String no = request.getParameter("no");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+		
+		String method = request.getParameter("_method");
+		if ("DELETE".equals(method)) {
+			System.out.println("===== PostDetailServlet.java의 DELETE! DELETE! DELETE! =====");
+			doDelete(request, response);
+		} else {
+			System.out.println("===== PostDetailServlet.java의 UPDATE! UPDATE! UPDATE! =====");
+			
+			updatePost(request, response);
+		}
+	}
+	
+	private void updatePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("===== PostDetailServlet.java의 updatePost 을 실행합니다. =====");
+        
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        
+        String no = request.getParameter("no");
         String title = request.getParameter("title");
         String id = request.getParameter("id");
         String date = request.getParameter("date");
@@ -65,12 +96,12 @@ public class PostDetailServlet extends HttpServlet {
 
         response.sendRedirect("/");
     }
-	
-	@Override
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("===== PostDetailServlet.java의 doDelete 을 실행합니다. =====");
-		
-		String no = request.getParameter("no");
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("===== PostDetailServlet.java의 doDelete 을 실행합니다. =====");
+
+        String no = request.getParameter("no");
 
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement("DELETE FROM posts WHERE no = ?")) {

@@ -43,7 +43,7 @@
     </table>
     <br>
     <form action="/postadd" method="get">
-        <button type="submit">Register</button>
+        <button type="submit">등록</button>
     </form>
 </body>
 </html>
