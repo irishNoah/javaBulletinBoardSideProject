@@ -3,6 +3,5 @@
 /target/
 DBUtil*
 application*
-/src/main/java/com/example/util/DBUtil.java
 /src/main/resources/application.properties
 pom.xml
