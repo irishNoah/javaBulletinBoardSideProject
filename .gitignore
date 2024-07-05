@@ -3,5 +3,3 @@
 /target/
 DBUtil*
 application*
-/src/main/resources/application.properties
-pom.xml
