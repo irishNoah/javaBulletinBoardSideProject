@@ -8,14 +8,14 @@ Your Project Name
 │ ├── main
 │ │ ├── java
 │ │ │ └── com
-│ │ │ └── example
-│ │ │ ├── servlet
-│ │ │ │ ├── Post.java
-│ │ │ │ ├── PostAddServlet.java
-│ │ │ │ ├── PostDetailServlet.java
-│ │ │ │ └── PostServlet.java
-│ │ │ └── util
-│ │ │ │ ├── DBUtil.java
+│ │ │ │ └── example
+│ │ │ │ │ ├── servlet
+│ │ │ │ │ │ ├── Post.java
+│ │ │ │ │ │ ├── PostAddServlet.java
+│ │ │ │ │ │ ├── PostDetailServlet.java
+│ │ │ │ │ │ └── PostServlet.java
+│ │ │ │ │ └── util
+│ │ │ │ │ │ ├── DBUtil.java
 │ │ ├── resources
 │ │ │ │ ├── application.properties
 │ │ └── webapp
