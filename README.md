@@ -87,19 +87,20 @@ public class DBUtil {
 ## 환경 설정
 | 프로그램 명 | 버전 명  |
 | :---------- | :------- |
-| Node.js     | v18.12.0 |
-| NPM         | v8.19.2  |
+| JDK         | v17.0.1  |
+| Tomcat     | v9.0 Server |
 
 
 ## 화면 (+ URL Example)
-- 메인 화면 (Read Page / http://localhost:8080)
-![image](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/e3df46e6-bfff-46f3-947e-aea24c48ae01)
+### 메인 화면 (Read Page / http://localhost:8080)
+<img src="https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/e3df46e6-bfff-46f3-947e-aea24c48ae01" align="center">
 
-- 등록 화면 (http://localhost:8080/postadd?)
-![image](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/dc77b79d-a189-4065-87b3-0c7f2890e7b2)
 
-- 상세 화면 (http://localhost:8080/postdetail?no=15)
-![image](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/62f1b7d2-8aaf-4e1a-a92e-329ec0e1722e)
+### 등록 화면 (http://localhost:8080/postadd?)
+![image align="left"](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/dc77b79d-a189-4065-87b3-0c7f2890e7b2)
+
+### 상세 화면 (http://localhost:8080/postdetail?no=15)
+![image align="left"](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/62f1b7d2-8aaf-4e1a-a92e-329ec0e1722e)
 
 
 ## 어려웠던 점
