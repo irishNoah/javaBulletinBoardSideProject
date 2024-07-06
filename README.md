@@ -56,7 +56,33 @@ Project Name
 | index.jsp          	| http://localhost:8080 으로 들어올 경우, 바로 postlist.jsp로 이동  |
 
 ## DBUtil.java
+※ DBUtil.java는 .gitignore 대상으로, 해당 파일의 소스 코드는 아래와 같습니다.
+```java
+package com.example.util;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBUtil {
+    private static final String URL = "jdbc:mysql://localhost:3306/DB명(예시:bulletin_board)?useUnicode=true&characterEncoding=UTF-8";
+    private static final String USER = "Your DB ID";
+    private static final String PASSWORD = "Your DB Password";
+
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Connection getConnection() throws SQLException {
+    	System.out.println("hello?");
+    	return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+```
 
 
 ## 환경 설정
