@@ -84,17 +84,30 @@ public class DBUtil {
 }
 ```
 
-
 ## 환경 설정
-- Dynamic Web으로 구현
+| 프로그램 명 | 버전 명  |
+| :---------- | :------- |
+| Node.js     | v18.12.0 |
+| NPM         | v8.19.2  |
 
 
-## 화면
+## 화면 (+ URL Example)
+- 메인 화면 (Read Page / http://localhost:8080)
+![image](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/e3df46e6-bfff-46f3-947e-aea24c48ae01)
 
+- 등록 화면 (http://localhost:8080/postadd?)
+![image](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/dc77b79d-a189-4065-87b3-0c7f2890e7b2)
+
+- 상세 화면 (http://localhost:8080/postdetail?no=15)
+![image](https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/62f1b7d2-8aaf-4e1a-a92e-329ec0e1722e)
 
 
 ## 어려웠던 점
-
-
+- 경로 설정
+- 한글 깨짐 방지
 
 ## Velog
+- [Java 게시판 프로젝트 관련 블로그](https://velog.io/@irish/series/JavaBoardProject-Create_Dynamic_Web_Project)
+
+## 추후 예정 사항
+- Spring + React
