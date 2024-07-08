@@ -89,6 +89,7 @@ public class DBUtil {
 | :---------- | :------- |
 | JDK         | v17.0.1  |
 | Tomcat     | v9.0 Server |
+| mysql-connector-java     | v8.0.33 |
 
 
 ## 화면 (+ URL Example)
@@ -105,7 +106,7 @@ public class DBUtil {
 
 ## 어려웠던 점
 - 경로 설정
-- 한글 깨짐 방지
+- [한글 깨짐 방지](https://velog.io/@irish/JavaBoardProject-DeletePosting-and-PreventCrackKorean)
 
 ## Velog
 - [Java 게시판 프로젝트 관련 블로그](https://velog.io/@irish/series/JavaBoardProject-Create_Dynamic_Web_Project)
