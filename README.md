@@ -61,8 +61,18 @@ Project Name
 | postlist.jsp         	| 게시판 목록 화면  |
 | index.jsp          	| http://localhost:8080 으로 들어올 경우, 바로 postlist.jsp로 이동  |
 
+## 환경 설정
+| 프로그램 명 | 버전 명  |
+| :---------- | :------- |
+| JDK         | v17.0.1  |
+| Tomcat     | v9.0 Server |
+| mysql-connector-java     | v8.0.33 |
+
+
 ## DBUtil.java
-※ DBUtil.java는 .gitignore 대상으로, 해당 파일의 소스 코드는 아래와 같습니다.
+※ DBUtil.java는 .gitignore 대상으로, 해당 파일의 소스 코드는 아래와 같습니다. <br>
+※ DBUtil.java의 경로는 src/main/java/com/example/util 아래에 넣으셔야 합니다.
+
 ```java
 package com.example.util;
 
@@ -89,14 +99,6 @@ public class DBUtil {
     }
 }
 ```
-
-## 환경 설정
-| 프로그램 명 | 버전 명  |
-| :---------- | :------- |
-| JDK         | v17.0.1  |
-| Tomcat     | v9.0 Server |
-| mysql-connector-java     | v8.0.33 |
-
 
 ## 화면 (+ URL Example)
 ### 메인 화면 (Read Page / http://localhost:8080)
