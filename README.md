@@ -4,6 +4,9 @@
 ## Directory
 ```
 Project Name
+├── DATABASE
+│ ├── ddl_mysql.sql
+│ ├── dml_mysql.sql
 ├── src
 │ ├── main
 │ │ ├── java
@@ -35,6 +38,7 @@ Project Name
 ### Directory
 | 폴더명 | 설명  |
 | :---------- | :------- |
+| DATABASE     | 게시판 관련 MySQL 쿼리문 관련 디렉토리 |
 | src/main/java/com/example/servlet     | 게시판 관련 getter 및 setter & CRUD 관련 Servlet 관련 디렉토리 |
 | src/main/java/com/example/util        | MySQL 접속 관련 디렉토리  |
 | src/main/webapp/WEB-INF         	| Servlet name / class / url-patter 등록 관련 디렉토리  |
@@ -44,6 +48,8 @@ Project Name
 ### File
 | 파일명 | 설명  |
 | :---------- | :------- |
+| ddl_mysql.sql     | 게시판 관련 테이블 생성 쿼리문 |
+| dml_mysql.sql     | 게시판 관련 테이블 데이터 삽입 쿼리문 |
 | Post.java     | 게시판 테이블 컬럼 getter & setter |
 | PostAddServlet.java       | 게시판 Create 작업 수행  |
 | PostDetailServlet.java         	| 게시판 Update 및 Delete 작업 수행  |
