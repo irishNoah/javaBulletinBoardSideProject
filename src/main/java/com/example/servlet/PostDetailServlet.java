@@ -21,15 +21,11 @@ public class PostDetailServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("===== PostDetailServlet.java의 doGet 을 실행합니다. =====");
 
 		request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 		
 		String no 		= request.getParameter("no");
-//		String title 	= request.getParameter("title");
-//        String id 		= request.getParameter("id");
-//        String date 	= request.getParameter("date");
 		Post post 		= null;
 
 		try (Connection conn = DBUtil.getConnection();
@@ -63,18 +59,13 @@ public class PostDetailServlet extends HttpServlet {
 		
 		String method = request.getParameter("_method");
 		if ("DELETE".equals(method)) {
-			System.out.println("===== PostDetailServlet.java의 DELETE! DELETE! DELETE! =====");
 			doDelete(request, response);
 		} else {
-			System.out.println("===== PostDetailServlet.java의 UPDATE! UPDATE! UPDATE! =====");
-			
 			updatePost(request, response);
 		}
 	}
 	
 	private void updatePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("===== PostDetailServlet.java의 updatePost 을 실행합니다. =====");
-        
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         
@@ -99,8 +90,6 @@ public class PostDetailServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("===== PostDetailServlet.java의 doDelete 을 실행합니다. =====");
-
         String no = request.getParameter("no");
 
         try (Connection conn = DBUtil.getConnection();
