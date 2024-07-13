@@ -102,7 +102,8 @@ public class DBUtil {
 
 ## 화면 (+ URL Example)
 ### 메인 화면 (Read Page / http://localhost:8080)
-<img src="https://github.com/irishNoah/javaBulletinBoardSideProject/assets/80700537/e3df46e6-bfff-46f3-947e-aea24c48ae01" align="center">
+![image](https://github.com/user-attachments/assets/ff7f113d-e447-49d0-a5d7-a9a240e69ca6)
+
 
 
 ### 등록 화면 (http://localhost:8080/postadd?)
